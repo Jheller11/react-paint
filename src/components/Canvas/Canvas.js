@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import Pixel from '../Pixel/Pixel'
+import ToolBar from '../ToolBar/ToolBar'
 
 class Canvas extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      number: 120,
+      number: 12000,
       pixels: [],
-      color: this.props.color
+      color: ''
     }
+    this.changeColor = this.changeColor.bind(this)
   }
 
   componentDidMount(i) {
@@ -21,19 +23,30 @@ class Canvas extends Component {
     })
   }
 
+  changeColor(color) {
+    this.setState({
+      color: color
+    })
+    console.log(this.state.color)
+  }
+
   render() {
     let canvas = this.state.pixels.map(pixel => {
       return (
         <Pixel
-          paint={this.paint}
           number={pixel.number}
           key={pixel.number}
-          color={pixel.color}
+          color={this.state.color}
         />
       )
     })
 
-    return <div className="canvas">{canvas}</div>
+    return (
+      <div>
+        <div className="canvas">{canvas}</div>
+        <ToolBar changeColor={this.changeColor} color={this.state.color} />
+      </div>
+    )
   }
 }
 

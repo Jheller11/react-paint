@@ -4,7 +4,7 @@ class Pixel extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      color: this.props.color
+      color: ''
     }
     this.paint = this.paint.bind(this)
   }
@@ -12,7 +12,7 @@ class Pixel extends Component {
   paint(e) {
     e.preventDefault()
     this.setState({
-      color: 'red'
+      color: this.props.color
     })
   }
 
