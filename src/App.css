@@ -1,0 +1,10 @@
+.pixel {
+  min-height: 5px;
+  min-width: 5px;
+  display: inline;
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+}
