@@ -6,7 +6,7 @@ class Canvas extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      number: 12000,
+      number: 4000,
       pixels: [],
       color: ''
     }

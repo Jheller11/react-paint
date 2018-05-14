@@ -20,7 +20,7 @@ class Pixel extends Component {
     return (
       <div
         className="pixel"
-        onMouseOver={this.paint}
+        onMouseEnter={this.paint}
         style={{ backgroundColor: this.state.color }}
       >
         {' '}
